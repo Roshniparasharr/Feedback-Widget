@@ -1,10 +1,8 @@
 import { Star, MessageSquare } from 'lucide-react';
 
 const FeedbackPreview = ({ feedback, hasFeedback, onReset }) => {
-  // Show empty state if no feedback
-  if (!hasFeedback) return <EmptyPreview />;
   
-  const EmptyPreview = () => (
+    const EmptyPreview = () => (
     <div className="bg-white p-6 rounded-xl shadow-lg border border-amber-200 sticky top-8">
         <h2 className="text-2xl font-bold mb-6 text-amber-900 border-b pb-3 border-amber-100">
             Feedback Summary
@@ -16,6 +14,11 @@ const FeedbackPreview = ({ feedback, hasFeedback, onReset }) => {
         </div>
     </div>
    );
+   
+  // Show empty state if no feedback
+  if (!hasFeedback) return <EmptyPreview />;
+  
+
 
   return (
     <div className="bg-white p-6 pb-8.5 rounded-xl shadow-lg border border-amber-200 sticky top-8">

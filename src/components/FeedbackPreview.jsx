@@ -28,13 +28,13 @@ const FeedbackPreview = ({ feedback, hasFeedback, onReset }) => {
       <div className="space-y-5">
         
         {/* User info, shows anonymous if name not provided */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h3 className="text-lg font-semibold text-amber-800">
+<div className="flex items-center justify-between">
+          <div className="min-w-0"> {/* Added min-w-0 to enable text truncation */}
+            <h3 className="text-lg font-semibold text-amber-800 truncate max-w-[440px]">
               {feedback.name || 'Anonymous'} 
             </h3>
             {/* only show email if entered */}
-            {feedback.email && <p className="text-sm text-amber-600">{feedback.email}</p>}
+            {feedback.email && <p className="text-sm text-amber-600 truncate">{feedback.email}</p>}
           </div>
         </div>
         
@@ -62,7 +62,7 @@ const FeedbackPreview = ({ feedback, hasFeedback, onReset }) => {
           {feedback.comment && (
             <div>
               <p className="text-sm font-medium text-amber-800 mb-1">Comment:</p>
-              <p className="text-amber-700 bg-white p-3 rounded border border-amber-100">
+              <p className="text-amber-700 bg-white p-3 rounded border border-amber-100 overflow-auto">
                 {feedback.comment}
               </p>
             </div>

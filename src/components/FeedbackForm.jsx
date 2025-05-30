@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react';
-
+import InputField from './InputField';
 const FeedbackForm = ({ feedback, onChange, onSubmit, onReset, submitted }) => {
   // if submitted already show thank you message instead of form
   if (submitted) {
@@ -25,22 +25,6 @@ const FeedbackForm = ({ feedback, onChange, onSubmit, onReset, submitted }) => {
     );
   }
 
-  // reusable input component to reduce duplicate code
-  const InputField = ({ label, name, type = "text", value, onChange, required }) => (
-    <div>
-      <label className="block text-sm font-medium text-amber-800 mb-1">{label}</label>
-      <input 
-        type={type} 
-        name={name} 
-        value={value} 
-        onChange={onChange} 
-        required={required}
-        className="w-full px-4 py-2 border border-amber-300 rounded-lg focus:ring-2 
-          focus:ring-amber-500 focus:border-amber-500"
-        placeholder={`Your ${name}`} 
-      />
-    </div>
-  );
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-lg border border-amber-200">
